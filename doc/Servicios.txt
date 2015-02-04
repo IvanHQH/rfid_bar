@@ -1,0 +1,134 @@
+# POST /sync
+{
+	inventories: [
+		{
+			event_id: 1,
+			name: 'Inventory'
+			type: 0 // 0: Inicial, 1: Parcial, 2: Final
+			datetime: '2014/05/21',
+			epcs : ['xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx']
+			// csv: 'file_name.csv'
+		}, {
+			event_id: 1,
+			name: 'Inventory'
+			type: 0 // 0: Inicial, 1: Parcial, 2: Final
+			datetime: '2014/05/21',
+			epcs : ['xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx']
+			// csv: 'file_name.csv'
+		}
+	],
+	bar_orders: [
+		{
+			event_id: 1,
+			bar_id: 1,
+			name: 'Inventory'
+			datetime: '2014/05/21',
+			epcs : ['xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx']
+		}
+	]
+}
+
+
+
+# GET /sync
+{
+	products: [
+		{
+			id: 1
+			upc: 'xxxxx',
+			product_name: ''
+		},
+		{....}
+	],
+	products_bar: [
+		{
+			id: 1
+			upc: 'xxxxx',
+			product_name: ''
+		},
+		{....}
+	],
+	active_event: {
+		id: 1
+		event_name: '',
+		description: '',
+		created_at: '',
+		updated_at: '',
+		status: 1
+	},
+	bars: [
+		{
+			id: 1,
+			name: "Barra 1"
+		}
+	]
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+{
+	customer_name: 'Feng',
+	customer_logo: '/root/feng/logo.png',
+	vendor_name: 'Grupo HQH',
+	vendor_logo: '/root/feng/logo.png',
+	catalogs: {
+		products_file_path: '/root/feng/products.csv',
+		epc_readings_path: '/root/feng/epcs',
+		summary_path: '/root/feng/summary',
+		epc_filename_template: 'epcs_%ts_feng',
+		summary_filename_template: 'summary_%ts_feng',
+	},
+	sync_options: {
+		enable_sync: true,
+		secure_key: 'xxxx',
+		sync_rules: [
+			{
+				get: {
+					url: 'http://xxxxxxxxxxxxx/sync',
+					response_structure: {
+						products: [
+							{
+								id: 1
+								upc: 'xxxxx',
+								product_name: ''
+							},
+							{....}
+						],
+						active_event: {
+							id: 1
+							event_name: '',
+							description: '',
+							created_at: '',
+							updated_at: '',
+							status: 1
+						}
+					}
+				}, 
+				post: {
+					url: 'http://xxxxxxxxxxxxx/sync',
+					request_structure: {
+						inventories: [
+							{
+								event_id: 1,
+								name: 'Inventory'
+								type: 0 // 0: Inicial, 1: Parcial, 2: Final
+								date: '2014/05/21',
+								epcs : ['xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx']
+								// csv: 'file_name.csv'
+							}, {
+								event_id: 1,
+								name: 'Inventory'
+								type: 0 // 0: Inicial, 1: Parcial, 2: Final
+								date: '2014/05/21',
+								epcs : ['xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx', 'xxxxxxxxxxxxx']
+								// csv: 'file_name.csv'
+							}
+						]
+					}
+				}
+			}
+		]
+	}
+}
+
+

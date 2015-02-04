@@ -1,0 +1,201 @@
+/*
+ * Base structure
+ */
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    height: 100%;
+    width: 100%;
+    background: url('../img/linen-lighter.png');
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/*
+ * Global add-ons
+ */
+
+.sub-header {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/*
+ * Sidebar
+ */
+
+/* Hide for mobile, show later */
+.sidebar {
+    display: none;
+}
+@media (min-width: 768px) {
+    .sidebar {
+        position: fixed;
+        top: 51px;
+        bottom: 0;
+        left: 0;
+        z-index: 1000;
+        display: block;
+        padding: 20px;
+        overflow-x: hidden;
+        overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+        background-color: #0d0d0d;
+        border-right: 1px solid #eee;
+        background:
+            radial-gradient(black 15%, transparent 16%) 0 0,
+            radial-gradient(black 15%, transparent 16%) 8px 8px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+            radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+        background-color:#0d0d0d;
+        background-size:16px 16px;
+    }
+}
+
+/* Sidebar navigation */
+.nav-sidebar {
+    margin-right: -21px; /* 20px padding + 1px border */
+    margin-bottom: 20px;
+    margin-left: -20px;
+}
+.nav-sidebar > li > a {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.nav-sidebar > .active > a {
+    color: #fff;
+    background-color: #f52561;
+}
+
+
+/*
+ * Main content
+ */
+
+.main {
+    padding: 20px;
+}
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+.main .page-header {
+    margin-top: 0;
+}
+
+
+/*
+ * Placeholder dashboard ideas
+ */
+
+.placeholders {
+    margin-bottom: 30px;
+    text-align: center;
+}
+.placeholders h4 {
+    margin-bottom: 0;
+}
+.placeholder {
+    margin-bottom: 20px;
+}
+.placeholder img {
+    display: inline-block;
+    border-radius: 50%;
+}
+
+.box {
+    -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    background: #F1F1F1;
+    margin-bottom: 20px;
+}
+
+
+.box .tab-header {
+    color: #666;
+    background: #cccccc;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: linear-gradient(top, #eeeeee, #cccccc);
+    text-shadow: 0px 1px 1px rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid #f8f8f8;
+}
+
+.tab-header {
+    line-height: 32px;
+    height: 32px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold;
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+    border-radius: 5px 5px 0 0 / 5px 5px 0 0;
+    background: #2a2a30;
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgi…pZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+    background-size: 100%;
+    background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #494852), color-stop(100%, #2a2a30));
+    background-image: -webkit-linear-gradient(top, #494852, #2a2a30);
+    background-image: -moz-linear-gradient(top, #494852, #2a2a30);
+    background-image: -o-linear-gradient(top, #494852, #2a2a30);
+    background-image: linear-gradient(top, #494852, #2a2a30);
+    -webkit-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #1D1E21;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.footer {
+    padding: 5px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    color: #01171c;
+    text-shadow: rgba(0, 0, 0, 0.4) 0 1px 0;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    border-radius: 20px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, rgba(255, 255, 255, 0.4) 0 1px 0;
+    -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, rgba(255, 255, 255, 0.4) 0 1px 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px inset, rgba(255, 255, 255, 0.4) 0 1px 0;
+    max-width: 300px;
+    margin-bottom: 40px;
+    line-height: 25px;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.8);
+}
+
+.box .content-container {
+    background-color: #FFFFFF;
+    /*padding: 10px;*/
+}
+
+
+.sidebar .sub-header {
+    color: #04b9db;
+    font-size: 16px;
+}

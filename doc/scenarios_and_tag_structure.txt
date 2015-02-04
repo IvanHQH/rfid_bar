@@ -1,0 +1,39 @@
+/* TAG Structure */
+
+{ 
+	timestamp: 66306713333, 
+	epc: 'xxxxxxxxxxxxxxxxxxxxxxxxxx', 
+	event_type: 'new', 
+	antenna_id: 1
+}
+
+
+/* Tipos de Evento */
+	0: Unknown
+	1: New
+	2: Gone
+	3: Back
+	
+
+/* Escenarios: */
+
+epc_x -> a1 -> 00 -> new
+epc_x -> a2 -> 00 -> new
+epc_x -> a1 -> 00 -> gone
+epc_x -> a2 -> 00 -> gone
+
+= El tag paso de la antena 1 a la 2 y se fue (Salida)
+
+epc_x -> a2 -> 00 -> back
+epc_x -> a1 -> 00 -> back
+epc_x -> a2 -> 00 -> gone
+epc_x -> a1 -> 00 -> gone
+
+= El tag paso de la antena 2 a la 1 y regresó (Entrada)
+
+epc_x -> a1 -> 00 -> back
+epc_x -> a2 -> 00 -> back
+epc_x -> a2 -> 00 -> gone
+epc_x -> a1 -> 00 -> gone
+
+= EL tag sigue adentro del inv
